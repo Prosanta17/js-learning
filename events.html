@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <button>Click me</button>  
+    
+    <ul id="list">
+        <li>One</li>
+        <li>Two</li>
+        <li id="three">Three</li>
+        <li>Four</li>
+        <li>Five</li>
+    </ul>
+</body>
+
+<script>
+    const btn = document.querySelector('button')
+    // btn.onclick = function() {
+    //     alert("hi")
+    // }
+    // btn.addEventListener("click", function(){
+    //     alert('hi')
+    // })
+    btn.addEventListener("click", function(e){
+        console.log(e);        
+    })
+
+    // event bubbling and capturing
+    const list = document.getElementById("list")
+    list.addEventListener("click", function(){
+        // alert('list clicked');
+    }, false)
+
+    const three = document.getElementById("three")
+    three.addEventListener('click', function(e){
+        // alert('three clicked');
+        // e.stopPropagation()
+    }, false)
+
+    list.addEventListener("click", function(e){
+        const removeIt = (e.target);  
+        removeIt.remove();      
+    })
+
+</script>
+</html>

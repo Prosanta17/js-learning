@@ -6,6 +6,7 @@
     <title>Index</title>
 </head>
 <body style="background-color: #212121; color: white;">
+    <button id="start">Start</button>
     <button id="stop">Stop</button>
 
     <script>
@@ -20,11 +21,15 @@
         const changeOne = setTimeout(changeText, 4000);
         const changeTwo = setTimeout(namePrint, 4000);
         
+        const interval = setInterval(namePrint, 1000);
+
         document.getElementById("stop").addEventListener("click", function(){
             clearTimeout(changeOne);
             clearTimeout(changeTwo);
+            clearTimeout(interval)
             console.log("Stopped");            
         }) 
+
     </script>
 </body>
 </html>
